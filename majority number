@@ -1,0 +1,51 @@
+//print majority element
+// input [3,8,7,6,6,6,8]
+//output 3
+
+#include <iostream>
+#include <vector>
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+       int b,n,c;
+       cin>>n;
+       vector<int>nums;
+       for(int i=0;i<n;i++)
+       {
+           cin>>c;
+           nums.push_back(c);
+       }
+        map<int,int>mp;
+        for(int i=0;i<nums.size();i++)
+            mp[nums[i]]++;
+         
+          for(auto x:nums)
+         {
+        if(mp.find(x)!=mp.end())
+        {
+          auto tup= mp.find(x);
+          cout<<tup->first<<" "<<tup->second<<endl;
+        }}
+        
+        int max=0;
+         for(auto x:nums)
+         {
+             
+        if(mp.find(x)!=mp.end())
+        {
+            auto key=mp.find(x);
+            cout<<key->first<<" "<<key->second<<endl;
+                if(max<key->second){
+                max=key->second;
+              b=key->first;}
+        } 
+         }
+        
+        
+        cout<<b;
+        return 0;
+    
+}
