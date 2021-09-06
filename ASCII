@@ -1,0 +1,32 @@
+/*                                                                                                                                                                                                                                                                                                                            
+input: 3 
+       as3gAsd
+output: dv6jDvg [3 is added to ascii value of every character]
+*/                                                                                                                                                                                                                                                                                                                                  
+
+
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+int main(void)
+{
+	int n;
+	cin>>n;
+	string s;
+	cin>>s;
+	vector<char>v,v1;
+	for(int i=0;i<s.length();i++)
+	v.push_back(s[i]);
+
+	for(auto x:v)
+	{
+		int m=x+3;
+		char k=m;
+		v1.push_back(k);
+		cout<<k;
+	}
+	
+
+	
+}
