@@ -1,0 +1,42 @@
+#include<iostream>
+#include<vector>
+#include<bits/stdc++.h>
+
+
+using namespace std;
+
+class Solution {
+public:
+    vector<string> findRestaurant(vector<string>& list1, vector<string>& list2) {
+        vector<string>v;
+       map<string,int>mp;
+        for(auto x:list2)
+            mp[x]++;
+            
+              for(auto x:mp)
+            cout<<x.first<<" "<<x.second<<endl;
+       
+         for(auto p:list1)
+         {
+             if(mp.find(p)!=mp.end())
+             {
+                 auto temp=mp.find(p);
+                
+                     v.push_back(temp->first);
+             }
+             else continue;
+         }
+        return v;
+    }
+};
+ int main(void)
+ { Solution obj;
+
+ 	vector<string>arr = {"Shogun","Tapioca Express","Burger King","KFC"} ;
+	 vector<string>arrr= {"Piatti","The Grill at Torrey Pines","Hungry Hunter Steakhouse","Shogun"};
+  
+  vector<string>v1;
+  v1=obj.findRestaurant(arr,arrr) ;    
+  for(auto x:v1)
+  cout<<x<<" "; 
+    }
