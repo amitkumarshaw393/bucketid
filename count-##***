@@ -1,0 +1,38 @@
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int main(void)
+{
+string s;
+int sum=0;
+	cin>>s;
+
+	map<char,int>mp;
+	for(int i=0;i<s.length();i++)
+	mp[s[i]]++;
+	
+	if(mp.find('#')!=mp.end() && mp.find('*')!=mp.end())
+	{
+		auto temp=mp.find('#');
+		auto tem=mp.find('*');
+		
+		if(temp->second==tem->second)
+		{
+			sum=0;
+		}
+		else if(tem->second>temp->second)
+		{
+			sum=tem->second-temp->second;
+		}
+		
+		else if(temp->second>tem->second)
+		{
+			sum=tem->second-temp->second;
+		}
+	}
+	cout<<sum;
+	
+	
+	
+	
+}
