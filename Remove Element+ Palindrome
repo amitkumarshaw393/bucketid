@@ -1,0 +1,46 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main(void)
+
+{ int x;
+cin>>x;
+    vector<int>v;
+       int  mum=x,val;
+        int sum=0;
+      
+        while(x>0)
+        {
+            v.push_back(x%10);
+            x=x/10;
+        }
+       
+        for(auto c:v)
+        {
+             sum=10*sum+c;
+        }
+        cout<<sum<<endl;
+        
+        if(mum==sum) cout<< true<<endl;
+        
+        else cout<< false<<endl;
+        cout<<"val =";
+       cin>>val;
+         
+        int n = v.size();
+        int j = 0;
+        for(int i = 0;i < n;i++){
+            if(v[i] == val) continue;
+            swap(v[i],v[j]);
+            j++;
+        }
+        
+    
+        cout<< j<<endl;
+        for(auto x:v)
+        cout<<x;
+    
+  
+}
