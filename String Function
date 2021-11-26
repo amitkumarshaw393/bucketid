@@ -1,0 +1,19 @@
+#include <iostream>
+#include <string>
+using namespace std;
+ 
+int main () {
+  string x;
+  cin>>x;
+  
+  string z = x ;
+  string k = x + x;
+  string l = x + x+x;
+  cout << z<<endl<<k<<endl<<l;
+  int i=stoi(z);
+  int j=stoi(k);
+  int g=stoi(l);
+  cout<<endl<<i+j+g;
+  
+  return 0;
+}
